@@ -1,13 +1,11 @@
 package model;
 
-import java.util.Arrays;
-
 public class Grid {
-    private int numberOfRows;
-    private int numberOfColumns;
-    private int numberOfPlayers;
-    private char[][] grid;
-    private Player[] players;
+    private final int numberOfRows;
+    private final int numberOfColumns;
+    private final int numberOfPlayers;
+    private final char[][] grid;
+    private final Player[] players;
     private int currentPlayer;
 
     public Grid(int numberOfRows, int numberOfColumns, Player[] players) {
@@ -23,41 +21,26 @@ public class Grid {
         return numberOfRows;
     }
 
-    public void setNumberOfRows(int numberOfRows) {
-        this.numberOfRows = numberOfRows;
-    }
 
     public int getNumberOfColumns() {
         return numberOfColumns;
     }
 
-    public void setNumberOfColumns(int numberOfColumns) {
-        this.numberOfColumns = numberOfColumns;
-    }
 
     public char[][] getGrid() {
         return grid;
     }
 
-    public void setGrid(char[][] grid) {
-        this.grid = grid;
-    }
 
     public Player[] getPlayers() {
         return players;
     }
 
-    public void setPlayers(Player[] players) {
-        this.players = players;
-    }
 
     public int getNumberOfPlayers() {
         return numberOfPlayers;
     }
 
-    public void setNumberOfPlayers(int numberOfPlayers) {
-        this.numberOfPlayers = numberOfPlayers;
-    }
 
     public int getCurrentPlayer() {
         return currentPlayer;

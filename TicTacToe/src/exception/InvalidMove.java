@@ -1,7 +1,7 @@
 package exception;
 
 public class InvalidMove extends RuntimeException {
-    private String message;
+    private final String message;
 
     public InvalidMove(String message) {
         this.message = message;

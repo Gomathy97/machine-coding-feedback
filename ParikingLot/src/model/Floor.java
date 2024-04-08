@@ -29,7 +29,7 @@ public class Floor {
 
 
     public boolean isFull() {
-        return numberOfFreeSlots.values().stream().reduce(0, (a,b) -> a+b) == 0;
+        return numberOfFreeSlots.values().stream().reduce(0, Integer::sum) == 0;
     }
 
     @Override

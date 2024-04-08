@@ -1,8 +1,8 @@
 package model;
 
 public class Player {
-    private String name;
-    private Character token;
+    private final String name;
+    private final Character token;
 
     public Player(String name, Character token) {
         this.name = name;
@@ -13,15 +13,7 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Character getToken() {
         return token;
-    }
-
-    public void setToken(Character token) {
-        this.token = token;
     }
 }

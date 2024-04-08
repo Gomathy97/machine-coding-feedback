@@ -2,7 +2,7 @@ package model;
 
 public class Slot {
     private boolean isAvailable;
-    private String vehicleType;
+    private final String vehicleType;
 
     public Slot(String vehicleType) {
         this.isAvailable = true;

@@ -9,13 +9,12 @@ import java.util.Arrays;
 public class GridService {
     private Grid grid;
 
-    public Grid initializeGrid(int rows, int cols, Player[] players) {
+    public void initializeGrid(int rows, int cols, Player[] players) {
         grid = new Grid(rows, cols, players);
         for (char[] row : grid.getGrid()) {
             Arrays.fill(row, '_');
         }
         printGrid();
-        return grid;
     }
 
     public boolean makeAMove(int row, int col) {
@@ -24,7 +23,7 @@ public class GridService {
             throw new InvalidMove("Invalid Move");
         }
 
-        board[row-1][col-1] = grid.getCurrentPlayer() == 0 ? 'X' : 'O';
+        board[row-1][col-1] = grid.getCurrentPlayer() == 0 ? grid.getPlayers()[0].getToken() : grid.getPlayers()[1].getToken();
         printGrid();
         boolean isValid = isComplete(board, board[row-1][col-1]);
         if (isValid) {

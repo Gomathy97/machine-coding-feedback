@@ -26,7 +26,7 @@ public class TicTacToeMain {
             while (!command.equals("exit")) {
                 String[] moves = command.split(" ");
                 try {
-                    boolean isValid = gridService.makeAMove(Integer.valueOf(moves[0]), Integer.valueOf(moves[1]));
+                    boolean isValid = gridService.makeAMove(Integer.parseInt(moves[0]), Integer.parseInt(moves[1]));
                     if (isValid) {
                         System.exit(0);
                     }

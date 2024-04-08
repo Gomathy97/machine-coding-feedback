@@ -8,8 +8,7 @@ public class ParkingLot {
     private final String parkingLotId;
     private final int numberOfFloors;
     private final int numberOfSlotsPerFloor;
-    private Floor[] floor;
-    private boolean isFull;
+    private final Floor[] floor;
     Map<String, Vehicle> parkingDetails;
 
     public ParkingLot(String parkingLotId, int numberOfFloors, int numberOfSlotsPerFloor) {
@@ -17,7 +16,7 @@ public class ParkingLot {
         this.numberOfFloors = numberOfFloors;
         this.numberOfSlotsPerFloor = numberOfSlotsPerFloor;
         this.floor = new Floor[numberOfFloors];
-        parkingDetails = new HashMap<>();
+        this.parkingDetails = new HashMap<>();
     }
 
     public String getParkingLotId() {
@@ -28,32 +27,12 @@ public class ParkingLot {
         return numberOfFloors;
     }
 
-    public int getNumberOfSlotsPerFloor() {
-        return numberOfSlotsPerFloor;
-    }
-
     public Floor[] getFloor() {
         return floor;
     }
 
-    public void setFloor(Floor[] floor) {
-        this.floor = floor;
-    }
-
-    public boolean isFull() {
-        return isFull;
-    }
-
-    public void setFull(boolean isFull) {
-        this.isFull = isFull;
-    }
-
     public Map<String, Vehicle> getParkingDetails() {
         return parkingDetails;
-    }
-
-    public void setParkingDetails(Map<String, Vehicle> parkingDetails) {
-        this.parkingDetails = parkingDetails;
     }
 
     @Override
@@ -63,7 +42,6 @@ public class ParkingLot {
                 ", numberOfFloors=" + numberOfFloors +
                 ", numberOfSlotsPerFloor=" + numberOfSlotsPerFloor +
                 ", floor=" + Arrays.toString(floor) +
-                ", isFull=" + isFull +
                 ", parkingDetails=" + parkingDetails +
                 '}';
     }

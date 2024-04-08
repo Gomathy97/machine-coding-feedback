@@ -16,11 +16,11 @@ import static model.VehicleType.TRUCK;
 
 public class FloorService {
     SlotService slotService = new SlotService();
-    public void constructFloor(Floor[] floors, int numberOfFloors, int numbderOfSlotsPerFloor) {
+    public void constructFloor(Floor[] floors, int numberOfFloors, int numberOfSlotsPerFloor) {
         for (int floorId=0; floorId<numberOfFloors; floorId++) {
-            floors[floorId] = new Floor(numbderOfSlotsPerFloor);
-            new SlotService().constructSlot(floors[floorId].getSlots(), numbderOfSlotsPerFloor);
-            floors[floorId].getNumberOfFreeSlots().put(CAR.getType(), numbderOfSlotsPerFloor - 3);
+            floors[floorId] = new Floor(numberOfSlotsPerFloor);
+            new SlotService().constructSlot(floors[floorId].getSlots(), numberOfSlotsPerFloor);
+            floors[floorId].getNumberOfFreeSlots().put(CAR.getType(), numberOfSlotsPerFloor - 3);
             floors[floorId].getNumberOfFreeSlots().put(BIKE.getType(), 2);
             floors[floorId].getNumberOfFreeSlots().put(TRUCK.getType(), 1);
         }
@@ -68,8 +68,6 @@ public class FloorService {
     }
 
     public String fillSlot(ParkingLot parkingLot, Vehicle vehicle) {
-        if (parkingLot.isFull()) return null;
-
         String vehicleType = vehicle.getType();
         for (int floorId=0; floorId<parkingLot.getNumberOfFloors(); floorId++) {
             Floor floor = parkingLot.getFloor()[floorId];
